@@ -20,15 +20,14 @@ class ffxi_installer extends abstract_game_install
 	 */
 	protected function install_factions()
 	{
-		global $db;
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_factions_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_factions_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 1, 'faction_name' => 'Bastok');
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 2, 'faction_name' => 'San d\'Oria');
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 3, 'faction_name' => 'Windurst');
 		$sql_ary[] = array('game_id' => $this->game_id, 'faction_id' => 4, 'faction_name' => 'Jueno');
-		$db->sql_multi_insert($this->table('bb_factions_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_factions_table'), $sql_ary);
 	}
 
 	/**
@@ -36,9 +35,8 @@ class ffxi_installer extends abstract_game_install
 	 */
 	protected function install_classes()
 	{
-		global $db;
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_classes_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_classes_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 0,  'class_armor_type' => 'LEATHER', 'class_min_level' => 1, 'class_max_level' => 75, 'imagename' => 'ffxi_unknown');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 1,  'class_armor_type' => 'PLATE',   'class_min_level' => 1, 'class_max_level' => 75, 'imagename' => 'ffxi_warrior');
@@ -61,11 +59,11 @@ class ffxi_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 18, 'class_armor_type' => 'MAIL',    'class_min_level' => 1, 'class_max_level' => 75, 'imagename' => 'ffxi_bard');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 19, 'class_armor_type' => 'LEATHER', 'class_min_level' => 1, 'class_max_level' => 75, 'imagename' => 'ffxi_beastmaster');
 		$sql_ary[] = array('game_id' => $this->game_id, 'class_id' => 20, 'class_armor_type' => 'LEATHER', 'class_min_level' => 1, 'class_max_level' => 75, 'imagename' => 'ffxi_puppetmaster');
-		$db->sql_multi_insert($this->table('bb_classes_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_classes_table'), $sql_ary);
 		unset($sql_ary);
 
 		// class names in multiple languages
-		$db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "' AND attribute='class' ");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "' AND attribute='class' ");
 
 		$sql_ary = array();
 		// en
@@ -137,7 +135,7 @@ class ffxi_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 19, 'language' => 'de', 'attribute' => 'class', 'name' => 'Beastmaster',  'name_short' => 'Beastmaster');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 20, 'language' => 'de', 'attribute' => 'class', 'name' => 'Puppetmaster', 'name_short' => 'Puppetmaster');
 
-		$db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
 	}
 
 	/**
@@ -145,9 +143,8 @@ class ffxi_installer extends abstract_game_install
 	 */
 	protected function install_races()
 	{
-		global $db;
 
-		$db->sql_query('DELETE FROM ' . $this->table('bb_races_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "'");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_races_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "'");
 		$sql_ary = array();
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 1, 'race_faction_id' => 3);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 2, 'race_faction_id' => 1);
@@ -155,11 +152,11 @@ class ffxi_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 4, 'race_faction_id' => 2);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 5, 'race_faction_id' => 3);
 		$sql_ary[] = array('game_id' => $this->game_id, 'race_id' => 6, 'race_faction_id' => 3);
-		$db->sql_multi_insert($this->table('bb_races_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_races_table'), $sql_ary);
 		unset($sql_ary);
 
 		// race names in multiple languages
-		$db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $db->sql_escape($this->game_id) . "' AND attribute = 'race' ");
+		$this->db->sql_query('DELETE FROM ' . $this->table('bb_language_table') . " WHERE game_id = '" . $this->db->sql_escape($this->game_id) . "' AND attribute = 'race' ");
 
 		$sql_ary = array();
 		// en
@@ -186,6 +183,6 @@ class ffxi_installer extends abstract_game_install
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 5, 'language' => 'de', 'attribute' => 'race', 'name' => 'Tarutaru', 'name_short' => 'Tarutaru');
 		$sql_ary[] = array('game_id' => $this->game_id, 'attribute_id' => 6, 'language' => 'de', 'attribute' => 'race', 'name' => 'Mithra',   'name_short' => 'Mithra');
 
-		$db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
+		$this->db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
 	}
 }
