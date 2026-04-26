@@ -1,4 +1,5 @@
 # bbGuild - Final Fantasy XI
+[![Tests](https://github.com/avatharbe/bbguild_ffxi/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguild_ffxi/actions/workflows/tests.yml)
 
 Game plugin that adds Final Fantasy XI support to [bbGuild](https://github.com/avandenberghe/bbguild).
 
