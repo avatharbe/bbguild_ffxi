@@ -1,5 +1,5 @@
 {
-  "name": "avathar/bbguild_ffxi",
+  "name": "avathar/bbguild-ffxi",
   "type": "phpbb-extension",
   "description": "Final Fantasy XI game plugin for bbGuild. Provides FFXI classes, races, and factions.",
   "homepage": "https://github.com/avandenberghe/bbguild",
