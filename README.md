@@ -1,5 +1,5 @@
 # bbGuild - Final Fantasy XI
-[![Tests](https://github.com/avatharbe/bbguild_ffxi/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguild_ffxi/actions/workflows/tests.yml)
+[![Tests](https://github.com/avatharbe/bbguildffxi/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildffxi/actions/workflows/tests.yml)
 
 Game plugin that adds Final Fantasy XI support to [bbGuild](https://github.com/avandenberghe/bbguild).
 
@@ -21,7 +21,7 @@ Game plugin that adds Final Fantasy XI support to [bbGuild](https://github.com/a
 ## Installation
 
 1. Ensure bbGuild core (`avathar/bbguild`) is installed and enabled.
-2. Copy the `bbguild_ffxi` folder to `/ext/avathar/bbguild_ffxi/`.
+2. Copy the `bbguildffxi` folder to `/ext/avathar/bbguildffxi/`.
 3. Navigate in the ACP to `Customise -> Manage extensions`.
 4. Look for `bbGuild - Final Fantasy XI` under Disabled Extensions and click `Enable`.
 5. Go to ACP > bbGuild > Games and install the **Final Fantasy XI** game.
@@ -30,7 +30,7 @@ Game plugin that adds Final Fantasy XI support to [bbGuild](https://github.com/a
 
 1. Navigate in the ACP to `Customise -> Extension Management -> Extensions`.
 2. Find `bbGuild - Final Fantasy XI` under Enabled Extensions and click `Disable`.
-3. To permanently uninstall, click `Delete Data` and then delete the `/ext/avathar/bbguild_ffxi` folder.
+3. To permanently uninstall, click `Delete Data` and then delete the `/ext/avathar/bbguildffxi` folder.
 
 **Note:** Disabling the extension does not delete existing guild or player data. Your roster and player records remain intact in bbGuild core.
 

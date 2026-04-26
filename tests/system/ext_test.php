@@ -5,7 +5,7 @@
  * @license GNU General Public License, version 2 (GPL-2.0)
  */
 
-namespace avathar\bbguild_ffxi\tests\system;
+namespace avathar\bbguildffxi\tests\system;
 
 use PHPUnit\Framework\TestCase;
 
@@ -45,11 +45,11 @@ class ext_test extends TestCase
 
 	public function test_ext_is_enableable(): void
 	{
-		$ext = new \avathar\bbguild_ffxi\ext(
+		$ext = new \avathar\bbguildffxi\ext(
 			$this->container,
 			$this->extension_finder,
 			$this->migrator,
-			'avathar/bbguild_ffxi',
+			'avathar/bbguildffxi',
 			''
 		);
 
@@ -68,11 +68,11 @@ class ext_test extends TestCase
 			->with('ext.manager')
 			->willReturn($ext_manager);
 
-		$ext = new \avathar\bbguild_ffxi\ext(
+		$ext = new \avathar\bbguildffxi\ext(
 			$container,
 			$this->extension_finder,
 			$this->migrator,
-			'avathar/bbguild_ffxi',
+			'avathar/bbguildffxi',
 			''
 		);
 

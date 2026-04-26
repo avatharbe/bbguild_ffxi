@@ -1,16 +1,16 @@
 services:
-    avathar.bbguild_ffxi.installer:
-        class: avathar\bbguild_ffxi\game\ffxi_installer
+    avathar.bbguildffxi.installer:
+        class: avathar\bbguildffxi\game\ffxi_installer
         arguments:
             - '@dbal.conn'
             - '@cache.driver'
             - '@config'
             - '@user'
 
-    avathar.bbguild_ffxi.provider:
-        class: avathar\bbguild_ffxi\game\ffxi_provider
+    avathar.bbguildffxi.provider:
+        class: avathar\bbguildffxi\game\ffxi_provider
         arguments:
-            - '@avathar.bbguild_ffxi.installer'
+            - '@avathar.bbguildffxi.installer'
             - '@ext.manager'
         tags:
             - { name: bbguild.game_provider }

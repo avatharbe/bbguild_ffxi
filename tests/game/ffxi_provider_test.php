@@ -5,11 +5,11 @@
  * @license GNU General Public License, version 2 (GPL-2.0)
  */
 
-namespace avathar\bbguild_ffxi\tests\game;
+namespace avathar\bbguildffxi\tests\game;
 
 use PHPUnit\Framework\TestCase;
-use avathar\bbguild_ffxi\game\ffxi_provider;
-use avathar\bbguild_ffxi\game\ffxi_installer;
+use avathar\bbguildffxi\game\ffxi_provider;
+use avathar\bbguildffxi\game\ffxi_installer;
 
 class ffxi_provider_test extends TestCase
 {
@@ -28,7 +28,7 @@ class ffxi_provider_test extends TestCase
 			->disableOriginalConstructor()
 			->getMock();
 		$ext_manager->method('get_extension_path')
-			->willReturn('ext/avathar/bbguild_ffxi/');
+			->willReturn('ext/avathar/bbguildffxi/');
 
 		$this->provider = new ffxi_provider($installer, $ext_manager);
 	}
@@ -56,7 +56,7 @@ class ffxi_provider_test extends TestCase
 
 	public function test_images_path(): void
 	{
-		$this->assertStringContainsString('bbguild_ffxi', $this->provider->get_images_path());
+		$this->assertStringContainsString('bbguildffxi', $this->provider->get_images_path());
 		$this->assertStringEndsWith('images/', $this->provider->get_images_path());
 	}
 
